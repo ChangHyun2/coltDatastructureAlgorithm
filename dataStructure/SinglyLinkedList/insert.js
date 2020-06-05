@@ -1,9 +1,10 @@
 /*
 
-unshift
-
-
-
+insert
+    if invalid index : return false
+    if index is same as length : push a new node to the end
+    if index is 0, unshift a new node
+    otherwise, using get method, access the node at index-1
 
 */
 
@@ -103,18 +104,13 @@ class SinglyLinkedList {
 
     return this;
   }
+
+  setNode(index, value) {
+    const node = this.getNode(index);
+    if (node) {
+      node.value = value;
+      return true;
+    }
+    return false;
+  }
 }
-
-const linkedList = new SinglyLinkedList();
-console.log(linkedList.push(1));
-console.log(linkedList.push(2));
-console.log(linkedList.push(3));
-console.log(linkedList);
-
-console.log(linkedList.pop());
-console.log(linkedList.pop());
-console.log(linkedList.pop());
-console.log(linkedList.pop());
-console.log(linkedList.unshift(1));
-console.log(linkedList.unshift(2));
-console.log(linkedList);

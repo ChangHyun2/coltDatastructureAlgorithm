@@ -14,60 +14,60 @@ the function should calculate the maximum sum of n consecutive elements in the a
 
 function maxSubarraySum(arr, n) {
   let max = 0;
-  if (arr.length === 0) return null;
+
+  if (arr.length < n) {
+    return null;
+  }
+
   for (let i = 0; i < arr.length - n + 1; i++) {
     let subMax = arr.slice(i, i + n).reduce((a, b) => a + b, 0);
     if (subMax > max) max = subMax;
-  }
+  } // O(n^3) for , slice , reduce
   return max;
 }
 
 function maxSubarraySum2(arr, n) {
-  if (arr.length === 0) {
-    return null;
-  }
-  if (arr.length === 1) {
-    return Array.max(arr);
+  if (arr.length < n) {
+    return false;
   }
 
-  let subMax = [];
-  for (let i = 0; i < n; i++) {
-    subMax.push(arr[i]);
-  }
-  let left = 0;
-  let right = n - 1;
-  for (let i = 0; i < arr.length - n + 1; i++) {}
-}
+  let max = -Infinity;
 
-function colt(arr, n) {
-  if (num > arr.length) {
-    return null;
-  }
-  for (let i = 0; i < arr.length - n + 1; i++) {
-    subMax = 0;
-    for (let j = 0; j < num; j++) {
-      subMax += arr[i + j];
+  for (let i = 0; i < arr.length; i++) {
+    slideMax = 0;
+
+    for (let j = 0; j < n; j++) {
+      slideMax += arr[j + i];
     }
-    if (subMax > max) max = subMax;
+
+    max = Math.max(max, subMax);
   }
+
   return max;
 } // O(n^2)
 
-function coltRefactor(arr, n) {
-  let maxSum = 0;
-  let tempSum = 0;
-  if (arr.length < num) return null;
+function maxSubarraySum3(arr, n) {
+  if (arr.length < n) {
+    return null;
+  }
 
-  for (let i = 0; i < num; i++) {
-    maxSum += arr[i];
+  let subMax = 0;
+  for (let i = 0; i < n; i++) {
+    subMax += arr[i];
   }
-  tempSum = maxSum;
-  for (let i = num; i < arr.length; i++) {
-    tempSum = tempSum - arr[i - num] + arr[i];
-    maxSum = Math.max(maxSum, tempSum);
+
+  let slide = subMax;
+
+  for (let i = n; i < arr.length; i++) {
+    const diff = arr[n] - arr[i - n];
+
+    slide += diff;
+
+    subMax = Math.max(slide, subMax);
   }
-  return maxSum;
-}
+
+  return submax;
+} // O(n)
 
 console.log(maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 2));
 console.log(maxSubarraySum([1, 2, 5, 2, 8, 1, 5], 4));

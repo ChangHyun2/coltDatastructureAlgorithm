@@ -12,7 +12,7 @@ function addUpTo2(n) {
   }
   return total;
 }
-// 1 assignment 1 assignment  n addition and n assignment n add >> n
+// 2n+2 assign 2n addition n comparison >> n
 
 function countUpAndDown(n) {
   console.log("going up!");
@@ -30,8 +30,9 @@ function countUpAndDown(n) {
 n이 증가할 떄, 컴퓨터가 수행하는 단순 연산의 횟수가 f(n)의 상수배보다 작을 경우, O(f(n))으로 표기한다.
 f(n)이 linear(n)일 수도, quadratic(n^2)일 수도, constant(1)일 수도 있음.
 
-n이 증가할 때, runtime이 증가하는 양상 , upperbound
+n이 증가할 때, runtime이 증가하는 양상 
 
+upperbound
 addUpTo2는 n의 배수에 바운드 된다. so, O(n)으로 표기.
 
 */

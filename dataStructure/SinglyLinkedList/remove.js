@@ -1,7 +1,12 @@
 /*
 
-unshift
-
+remove
+    
+    if length<index<0 , return undefined
+    if index is length-1, pop
+    if index is 0, shift
+    otherwise, get method, access node at the index -1
+    set the next property on that node to be the next of the next node
 
 
 
@@ -103,18 +108,25 @@ class SinglyLinkedList {
 
     return this;
   }
+
+  setNode(index, value) {
+    const node = this.getNode(index);
+    if (node) {
+      node.value = value;
+      return true;
+    }
+    return false;
+  }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+    let previousNode = this.get(index - 1);
+    let removed = previousNode.next;
+    previousNode.next = removed.next;
+    this.length--;
+
+    return removed;
+  }
 }
-
-const linkedList = new SinglyLinkedList();
-console.log(linkedList.push(1));
-console.log(linkedList.push(2));
-console.log(linkedList.push(3));
-console.log(linkedList);
-
-console.log(linkedList.pop());
-console.log(linkedList.pop());
-console.log(linkedList.pop());
-console.log(linkedList.pop());
-console.log(linkedList.unshift(1));
-console.log(linkedList.unshift(2));
-console.log(linkedList);

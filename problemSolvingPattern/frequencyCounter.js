@@ -26,23 +26,21 @@
 
 function isSquared(arr1, arr2) {
   //arr1, arr2 길이를 체크. 다를 경우 false
-  //같을 경우, sort 후, arr1 각 item을 제곱해 arr2와 비
+  //같을 경우, sort 후, arr1 각 item을 제곱해 arr2와 비교
 
   if (arr1.length !== arr2.length) {
     return false;
   }
 
-  arr1.sort();
-  O(nlogn);
+  arr1.sort(); // O(nlogn)
   arr2.sort();
-  O(nlogn);
 
   for (let i = 0; i < arr1.length; i++) {
     if (arr1[i] * arr[i] !== arr2[i]) return false;
-  }
+  } // O(n)
 
   return true;
-} //O(nlogn) (sort)
+} // O(nlogn) (sort)
 
 function isSquared(arr1, arr2) {
   //arr1, arr2 길이를 체크. 다를 경우 false
@@ -54,9 +52,9 @@ function isSquared(arr1, arr2) {
 
   for (let i = 0; i < arr1.length; i++) {
     const doubled = arr1[i] * arr1[i];
-    obj1[doubled] = ++obj1[doubled] | 1;
+    obj1[doubled] = ++obj1[doubled] || 1;
 
-    obj2[arr2[i]] = ++obj2[arr2[i]] | 1;
+    obj2[arr2[i]] = ++obj2[arr2[i]] || 1;
   } //o(n)
 
   for (key in obj1) {
@@ -84,43 +82,6 @@ function coltNaiveIsSquare(arr1, arr2) {
   return true;
 } //o(n^2)
 
-// - solve/simplify
-
-function isSquared(arr1, arr2) {
-  //arr1, arr2 길이를 체크. 다를 경우 false
-  //같을 경우, sort후, arr1 각 item을 제곱해 arr2와 비교
-
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-
-  arr1.sort();
-  arr2.sort();
-
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) return false;
-  }
-
-  return true;
-}
-
-function isSquared(arr1, arr2) {
-  //arr1, arr2 길이를 체크. 다를 경우 false
-  //같을 경우, arr1,2를 hashTable로 변환.
-
-  let obj1 = {};
-  let obj2 = {};
-
-  for (let i = 0; i < arr1.length; i++) {
-    const doubled = arr1[i] * arr1[i];
-    obj1[doubled] = ++obj1[doubled] | 1;
-
-    obj2[arr2[i]] = ++obj2[arr2[i]] | 1;
-  }
-
-  return obj1 === obj2;
-}
-
 function coltIsSquare(arr1, arr2) {
   // 길이를 체크하고,
   // arr1의 item을 순회하며 arr2에서 index를 찾아 arr2에 있는 값일 경우,
@@ -147,4 +108,4 @@ function coltIsSquare(arr1, arr2) {
   }
 
   return true;
-}
+} // O(n)

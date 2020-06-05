@@ -29,5 +29,5 @@ big O of array operations
 array에서 item을 remove하거나 배열 앞 쪽에 item을 add할 경우, 뒤에 위치한 item 대한 indexing이 필요하기 때문이다.
 
 bigO notation은 항상 최악의 상황을 가정하고 계산한다.
-
+즉, upperbound 내에서 최대값을 취한다.
 */

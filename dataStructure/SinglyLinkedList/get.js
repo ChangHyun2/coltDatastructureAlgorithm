@@ -1,11 +1,8 @@
-/*
+// get : retrieving a node by it's position in the linkedList!
 
-unshift
-
-
-
-
-*/
+// input : index
+// index is 0~length-1 if not, return null
+// loop the list until reach the index.
 
 class Node {
   constructor(val) {
@@ -103,18 +100,19 @@ class SinglyLinkedList {
 
     return this;
   }
+
+  getNode(index) {
+    if (index < 0 || index > this.size() - 1) {
+      return null;
+    }
+    let currentIndex = 0;
+    let current = this.head;
+
+    while (currentIndex !== index) {
+      current = current.next;
+      currentIndex++;
+    }
+
+    return current;
+  }
 }
-
-const linkedList = new SinglyLinkedList();
-console.log(linkedList.push(1));
-console.log(linkedList.push(2));
-console.log(linkedList.push(3));
-console.log(linkedList);
-
-console.log(linkedList.pop());
-console.log(linkedList.pop());
-console.log(linkedList.pop());
-console.log(linkedList.pop());
-console.log(linkedList.unshift(1));
-console.log(linkedList.unshift(2));
-console.log(linkedList);

@@ -17,14 +17,14 @@ if the value is not found, return -1
 [1,2,3,4,5,6] , 6 >> 11
 */
 
-function search(arr, n) {
+function search1(arr, n) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === n) return i;
   }
   return -1;
 } //O(n)
 
-function search(arr, n) {
+function search2(arr, n) {
   let left = 0;
   let right = arr.length - 1;
   let mid = Math.floor((left + right) / 2);
@@ -45,12 +45,15 @@ function search(arr, n) {
   }
   return result;
 }
-function search(arr, n) {
+
+function search3(arr, n) {
   let left = 0;
   let right = arr.length - 1;
-  while (min <= max) {
-    let mid = Math.floor((left + right) / 2);
+  let mid = null;
 
+  while (left !== right) {
+    console.log(hi);
+    mid = Math.floor((left + right) / 2);
     if (arr[mid] < n) {
       left = mid + 1;
     } else if (arr[mid] > n) {
@@ -80,7 +83,10 @@ function colt(arr, n) {
   }
   return -1;
 } //O(logn)
-console.log(search([1, 2, 3, 4, 5, 6], 4));
-console.log(search([1, 2, 3, 4, 5, 6], 6));
-console.log(search([1, 2, 3, 4, 5, 6], 11));
-console.log(search([1, 2, 3, 4, 5, 6], 1));
+
+search([1, 2, 3, 4, 5, 6], 4);
+console.log(search3([1, 2, 3, 4, 5, 6], 4));
+console.log(search3([1, 2, 3, 4, 5, 6], 4));
+console.log(search3([1, 2, 3, 4, 5, 6], 6));
+console.log(search3([1, 2, 3, 4, 5, 6], 11));
+console.log(search3([1, 2, 3, 4, 5, 6], 1));

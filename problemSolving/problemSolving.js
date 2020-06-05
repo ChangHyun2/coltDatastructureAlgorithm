@@ -8,7 +8,7 @@
 - solve/simplify
 - look back and refactor    
 
-George Polya - how to solve it 참고
+George Polya - how to solve it 
 
 1. 문제를 이해하고, 내 문장으로 설명할 수 있는가?
 2. input이 무엇인가?
@@ -80,7 +80,7 @@ simplify
 - 단순해진 문제에 대한 해결책을 써본다.
 - 그 후, 본 문제를 풀어본다.
 
-simplify
+1. simplify
 function charCount(str){
     /make object to return at end
     var result = {};
@@ -98,7 +98,7 @@ function charCount(str){
         /if character is something else (space, period, etc) don't do anything
     /return object at 
 }
-solve origin problem
+2. solve origin problem
 function charCount(str){
     var result = {};
     for(let i=0; i<str.length; i++){

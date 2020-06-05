@@ -33,4 +33,4 @@ function double(arr) {
   }
   return newArr;
 }
-// O(n)
+// O(n) (newArr)

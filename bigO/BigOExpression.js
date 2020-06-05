@@ -43,4 +43,4 @@ function subtotals(array) {
   return subtotalArray;
 }
 
-// O(n^2) : nested for문에서 1, 2, 3, ..., n번 시행하므로, n(n+1)/2
+// O(n(n+1)/2) > O(n^2)

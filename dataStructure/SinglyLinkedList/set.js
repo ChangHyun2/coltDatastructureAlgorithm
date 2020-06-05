@@ -1,9 +1,11 @@
 /*
 
-unshift
-
-
-
+set
+    should accept a value and an index
+    use get function to find the specific node.
+    if node is not founc, return false
+    if node is found, set the value of that node to be the value passed to the function and return true
+    
 
 */
 
@@ -103,18 +105,13 @@ class SinglyLinkedList {
 
     return this;
   }
+
+  setNode(index, value) {
+    const node = this.getNode(index);
+    if (node) {
+      node.value = value;
+      return true;
+    }
+    return false;
+  }
 }
-
-const linkedList = new SinglyLinkedList();
-console.log(linkedList.push(1));
-console.log(linkedList.push(2));
-console.log(linkedList.push(3));
-console.log(linkedList);
-
-console.log(linkedList.pop());
-console.log(linkedList.pop());
-console.log(linkedList.pop());
-console.log(linkedList.pop());
-console.log(linkedList.unshift(1));
-console.log(linkedList.unshift(2));
-console.log(linkedList);
